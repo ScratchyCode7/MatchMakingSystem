@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Best Match</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+        .match {
+            border-bottom: 1px solid #ddd;
+            padding: 15px 0;
+        }
+        .match:last-child {
+            border-bottom: none;
+        }
+        .match-header {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .match-detail {
+            font-size: 16px;
+            margin: 5px 0;
+        }
+        .match-compatibility {
+            font-size: 18px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Your Best Match</h1>
+
+    {% if match %}
+        <div class="match">
+            <div class="match-header">
+                Match ID (Row Number): {{ match['row_number'] }} <br>
+                Best Match - {{ match.age }} years old
+            </div>
+            <div class="match-detail">
+                <strong>Sex:</strong> {{ match.sex }}
+            </div>
+            <div class="match-detail">
+                <strong>Orientation:</strong> {{ match.orientation }}
+            </div>
+            <div class="match-detail">
+                <strong>Status:</strong> {{ match.status }}
+            </div>
+            <div class="match-detail">
+                <strong>Body Type:</strong> {{ match.body_type }}
+            </div>
+            <div class="match-detail">
+                <strong>Diet:</strong> {{ match.diet }}
+            </div>
+            <div class="match-detail">
+                <strong>Drinks:</strong> {{ match.drinks }}
+            </div>
+            <div class="match-detail">
+                <strong>Drugs:</strong> {{ match.drugs }}
+            </div>
+            <div class="match-detail">
+                <strong>Smokes:</strong> {{ match.smokes }}
+            </div>
+            <div class="match-compatibility">
+                Match Compatibility: {{ match.match_compatibility }}%
+            </div>
+        </div>
+    {% else %}
+        <p>{{ message }}</p>
+    {% endif %}
+
+    <div class="button-container">
+        <a href="{{ url_for('next_match') }}">Next Match</a>
+    </div>
+</div>
+
+</body>
+</html>

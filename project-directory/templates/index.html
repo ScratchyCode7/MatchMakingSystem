@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Matches</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #FF5A5F; /* Tinder red color */
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #FF5A5F; /* Tinder red color */
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin: 10px 0 5px;
+            font-weight: bold;
+            color: #FF5A5F;
+        }
+        input[type="number"], select {
+            padding: 8px;
+            margin-bottom: 15px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            padding: 10px;
+            font-size: 18px;
+            color: #fff;
+            background-color: #FF5A5F; /* Tinder red color */
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        input[type="submit"]:hover {
+            background-color: #FF3B3F; /* Darker red */
+        }
+        .form-group {
+            display: flex;
+            justify-content: space-between;
+        }
+        .form-group label {
+            width: 48%;
+        }
+        select {
+            border: 1px solid #FF5A5F; /* Tinder red border color */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Enter Your Preferences</h1>
+        <form action="/find_matches" method="POST">
+            <div class="form-group">
+                <div>
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" name="age" required>
+                </div>
+                <div>
+                    <label for="sex">Sex:</label>
+                    <select id="sex" name="sex" required>
+                        <option value="m">Male</option>
+                        <option value="f">Female</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div>
+                    <label for="orientation">Orientation:</label>
+                    <select id="orientation" name="orientation" required>
+                        <option value="straight">Straight</option>
+                        <option value="bisexual">Bisexual</option>
+                        <option value="gay">Gay</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="status">Status:</label>
+                    <select id="status" name="status" required>
+                        <option value="single">Single</option>
+                        <option value="available">Available</option>
+                        <option value="seeing someone">Seeing someone</option>
+                        <option value="married">Married</option>
+                        <option value="unknown">Unknown</option>
+                    </select>
+                </div>
+            </div>
+
+            <label for="body_type">Body Type:</label>
+            <select id="body_type" name="body_type" required>
+                <option value="a little extra">A little extra</option>
+                <option value="average">Average</option>
+                <option value="thin">Thin</option>
+                <option value="athletic">Athletic</option>
+                <option value="fit">Fit</option>
+                <option value="nan">N/A</option>
+                <option value="skinny">Skinny</option>
+                <option value="curvy">Curvy</option>
+                <option value="full figured">Full figured</option>
+                <option value="jacked">Jacked</option>
+                <option value="rather not say">Rather not say</option>
+                <option value="used up">Used up</option>
+                <option value="overweight">Overweight</option>
+            </select>
+
+            <label for="diet">Diet:</label>
+            <select id="diet" name="diet" required>
+                <option value="strictly anything">Strictly anything</option>
+                <option value="mostly other">Mostly other</option>
+                <option value="anything">Anything</option>
+                <option value="vegetarian">Vegetarian</option>
+                <option value="nan">N/A</option>
+                <option value="mostly anything">Mostly anything</option>
+                <option value="mostly vegetarian">Mostly vegetarian</option>
+                <option value="strictly vegan">Strictly vegan</option>
+                <option value="strictly vegetarian">Strictly vegetarian</option>
+                <option value="mostly vegan">Mostly vegan</option>
+                <option value="strictly other">Strictly other</option>
+                <option value="mostly halal">Mostly halal</option>
+                <option value="other">Other</option>
+                <option value="vegan">Vegan</option>
+                <option value="mostly kosher">Mostly kosher</option>
+                <option value="strictly halal">Strictly halal</option>
+                <option value="halal">Halal</option>
+                <option value="strictly kosher">Strictly kosher</option>
+                <option value="kosher">Kosher</option>
+            </select>
+
+            <label for="drinks">Drinks:</label>
+            <select id="drinks" name="drinks" required>
+                <option value="socially">Socially</option>
+                <option value="often">Often</option>
+                <option value="not at all">Not at all</option>
+                <option value="rarely">Rarely</option>
+                <option value="nan">N/A</option>
+                <option value="very often">Very often</option>
+                <option value="desperately">Desperately</option>
+            </select>
+
+            <label for="drugs">Drugs:</label>
+            <select id="drugs" name="drugs" required>
+                <option value="never">Never</option>
+                <option value="sometimes">Sometimes</option>
+                <option value="nan">N/A</option>
+                <option value="often">Often</option>
+            </select>
+
+            <label for="smokes">Smokes:</label>
+            <select id="smokes" name="smokes" required>
+                <option value="sometimes">Sometimes</option>
+                <option value="no">No</option>
+                <option value="nan">N/A</option>
+                <option value="when drinking">When drinking</option>
+                <option value="yes">Yes</option>
+                <option value="trying to quit">Trying to quit</option>
+            </select>
+
+            <div class="form-group">
+                <div>
+                    <label for="preferred_sex">Preferred Sex:</label>
+                    <select id="preferred_sex" name="preferred_sex" required>
+                        <option value="m">Male</option>
+                        <option value="f">Female</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="preferred_orientation">Preferred Orientation:</label>
+                    <select id="preferred_orientation" name="preferred_orientation" required>
+                        <option value="straight">Straight</option>
+                        <option value="bisexual">Bisexual</option>
+                        <option value="gay">Gay</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div>
+                    <label for="age_min">Min Age:</label>
+                    <input type="number" id="age_min" name="age_min" required>
+                </div>
+                <div>
+                    <label for="age_max">Max Age:</label>
+                    <input type="number" id="age_max" name="age_max" required>
+                </div>
+            </div>
+
+            <input type="submit" value="Find Matches">
+        </form>
+    </div>
+</body>
+</html>

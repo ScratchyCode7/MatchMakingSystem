@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Match Bio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+        .bio-header {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .bio-detail {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Match Bio</h1>
+
+    <div class="bio-header">User Bio</div>
+
+    <div class="bio-detail">
+        <strong>Location:</strong> {{ match_bio.location }}
+    </div>
+    <div class="bio-detail">
+        <strong>Religion:</strong> {{ match_bio.religion }}
+    </div>
+    <div class="bio-detail">
+        <strong>Sign:</strong> {{ match_bio.sign }}
+    </div>
+    <div class="bio-detail">
+        <strong>Speaks:</strong> {{ match_bio.speaks }}
+    </div>
+    <div class="bio-detail">
+        <strong>Ethnicity:</strong> {{ match_bio.ethnicity }}
+    </div>
+    <div class="bio-detail">
+        <strong>About:</strong> {{ match_bio.essay0 }}
+    </div>
+</div>
+
+</body>
+</html>
